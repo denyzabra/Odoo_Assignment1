@@ -1,0 +1,13 @@
+<odoo>
+    <data>
+        <record model="ir.actions.server" id="action_purchase_request_submit">
+            <field name="name">Submit Purchase Request</field>
+            <field name="model_id" ref="model_purchase_request"/>
+            <field name="state">code</field>
+            <field name="code">
+                action = self.env.ref('purchase_request.action_purchase_request_submit').sudo().with_context(ctx).read()[0]
+            </field>
+        </record>
+        <!-- Define other actions and notifications -->
+    </data>
+</odoo>

@@ -1,0 +1,18 @@
+<odoo>
+    <data>
+        <record model="workflow" id="workflow_purchase_request">
+            <field name="name">Purchase Request Workflow</field>
+            <field name="osv">purchase.request</field>
+            <field name="on_create">True</field>
+            <field name="state">draft</field>
+        </record>
+        <record model="workflow.activity" id="activity_draft">
+            <field name="wkf_id" ref="workflow_purchase_request"/>
+            <field name="flow_start">True</field>
+            <field name="kind">dummy</field>
+            <field name="name">Draft</field>
+            <field name="action">purchase_request_draft</field>
+        </record>
+        <!-- Define other states and transitions -->
+    </data>
+</odoo>
